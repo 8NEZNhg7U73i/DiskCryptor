@@ -62,5 +62,5 @@ jobs:
         with:
           name: DcsPkg
           path: |
-            DcsPkg/Export/*
+            DcsPkg/Export*/*
             
