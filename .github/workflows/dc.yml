@@ -18,22 +18,22 @@ jobs:
         uses: microsoft/setup-msbuild@v2
 
       - name: Build DCrypt x86
-        run: echo msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="Release" /p:Platform=Win32
+        run: echo msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="Release" /p:Platform=Win32 /m:1
 
       - name: Build DCrypt x64
-        run: msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="Release" /p:Platform=x64 /m
+        run: msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="Release" /p:Platform=x64 /m:1
 
       - name: Build DCrypt arm64
-        run: msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="Release" /p:Platform=ARM64 /m
+        run: msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="Release" /p:Platform=ARM64 /m:1
 
       - name: Build DCrypt x86 debug
-        run: echo msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="debug" /p:Platform=Win32
+        run: echo msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="debug" /p:Platform=Win32 /m:1
 
       - name: Build DCrypt x64 debug
-        run: msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="debug" /p:Platform=x64 /m
+        run: msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="debug" /p:Platform=x64 /m:1
 
       - name: Build DCrypt arm64 debug
-        run: msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="debug" /p:Platform=ARM64 /m
+        run: msbuild /t:build DCrypt\dcrypt.sln /p:Configuration="debug" /p:Platform=ARM64 /m:1
 
       - name: Upload DCrypt
         uses: actions/upload-artifact@v4.4.3
