@@ -49,13 +49,13 @@ jobs:
         shell: cmd
         run: DcsPkg\ci_build_dcs.cmd X64
     
-      - name: Build Dcs AARCH64Rel
+      - name: Build Dcs A64Rel
         shell: cmd
-        run: DcsPkg\ci_build_dcs.cmd AARCH64Rel
+        run: DcsPkg\ci_build_dcs.cmd A64Rel
 
-      - name: Build Dcs AARCH64
+      - name: Build Dcs A64
         shell: cmd
-        run: DcsPkg\ci_build_dcs.cmd AARCH64
+        run: DcsPkg\ci_build_dcs.cmd A64
 
       - name: Upload Dcs
         uses: actions/upload-artifact@v4.4.3
