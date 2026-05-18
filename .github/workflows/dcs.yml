@@ -2,6 +2,7 @@ name: DCS
 
 on:
   workflow_dispatch:  # Allows manual triggering from GitHub UI
+  push:
 
 jobs:
   build:
@@ -40,9 +41,21 @@ jobs:
           path: ${{ env.PARENT_WS }}\edk2
           key: edk2-clean-edk2-stable202511-v1a-${{ runner.os }}
             
-      - name: Build Dcs
+      - name: Build Dcs X64Rel
         shell: cmd
-        run: DcsPkg\ci_build_dcs.cmd
+        run: DcsPkg\ci_build_dcs.cmd X64Rel
+
+      - name: Build Dcs X64
+        shell: cmd
+        run: DcsPkg\ci_build_dcs.cmd X64
+    
+      - name: Build Dcs AARCH64Rel
+        shell: cmd
+        run: DcsPkg\ci_build_dcs.cmd AARCH64Rel
+
+      - name: Build Dcs AARCH64
+        shell: cmd
+        run: DcsPkg\ci_build_dcs.cmd AARCH64
 
       - name: Upload Dcs
         uses: actions/upload-artifact@v4.4.3
